@@ -103,13 +103,6 @@ plot_histogram([counts])
 # Now, let's bring it back to phase. On the Bloch sphere, phase is represented by rotating the point around the surface of the sphere. This is like turning the needle on a compass to face a different direction. By changing the phase of a qubit, we can change the probability of finding the qubit in a particular measurement.
 # 
 # So, for two qubits, we can use the Bloch sphere to represent the state of both qubits and how they're connected. And we can use phase to manipulate the probability of finding the qubits in a particular measurement.
-# 
-# 
-# 
-# 
-# 
-# Regenerate response
-
 # In[17]:
 
 
