@@ -2,34 +2,25 @@
 # coding: utf-8
 
 # In[2]:
-
-
+#https://qiskit.org/documentation/getting_started.html 
+#Create a minimal environment with only Python installed in it.python3 -m venv /path/to/virtual/environment
+#Activate your new environment source /path/to/virtual/environment/bin/activate
+# For Windows python3 -m venv c:\path\to\virtual\environment c:\path\to\virtual\environment\Scripts\Activate.ps1 
+# Install Qiskit in a commmand/shell pip install qiskit
+# pip install 'qiskit[Visualization]'
 from qiskit import*
 from qiskit.tools.visualization import plot_bloch_multivector
 from qiskit.visualization import plot_histogram
 get_ipython().run_line_magic('matplotlib', 'inline')
 import math
-
-
 # In[3]:
-
-
 Aer.backends()
-
-
 # qasm_simulator = Aer.get_backend('qasm_simulator')
 # statevector_simulator = Aer.get_backend('statevector_simulator')
-
 # In[5]:
-
-
 qasm_simulator = Aer.get_backend('qasm_simulator') 
 statevector_simulator = Aer.get_backend('statevector_simulator')
-
-
 # In[6]:
-
-
 def run_on_simulators(circuit):
     statevec_job = execute(circuit, backend=statevector_simulator)
     result = statevec_job.result()
@@ -104,43 +95,25 @@ plot_histogram([counts])
 # 
 # So, for two qubits, we can use the Bloch sphere to represent the state of both qubits and how they're connected. And we can use phase to manipulate the probability of finding the qubits in a particular measurement.
 # In[17]:
-
-
 circuit = QuantumCircuit(2,2)
 circuit.rx(math.pi/4,0)
 circuit.rx(math.pi/2,1)
 statevec, counts = run_on_simulators(circuit)
 plot_bloch_multivector(statevec)
-
-
 # In[18]:
-
-
 plot_histogram([counts])
-
-
 # In[20]:
-
-
 circuit = QuantumCircuit(1,1)
 circuit.h(0)
 statevec, counts = run_on_simulators(circuit)
 plot_bloch_multivector(statevec)
-
-
 # In[21]:
-
-
 circuit = QuantumCircuit(1,1)
 circuit.h(0)
 circuit.z(0)
 statevec, counts = run_on_simulators(circuit)
 plot_bloch_multivector(statevec)
-
-
 # In[32]:
-
-
 circuit = QuantumCircuit(3,3)
 circuit.h(0)
 circuit.z(0)
@@ -153,15 +126,8 @@ circuit.cx(1,0)
 circuit.cx(2,1)
 statevec, counts = run_on_simulators(circuit)
 plot_bloch_multivector(statevec)
-
-
 # In[27]:
-
-
 plot_histogram([counts])
-
-
-# In[ ]:
 
 
 
