@@ -15,3 +15,6 @@ pip install qiskit[visualization]
 It is worth pointing out that if you’re a zsh user (which is the default shell on newer versions of macOS), you’ll need to put qiskit[visualization] in quotes:
 pip install 'qiskit[visualization]'
 Sign up in https://quantum-computing.ibm.com/ for analyzing through circuits and understanding Quantum gates. 
+conda install -c anaconda git
+pip install git+https://github.com/qiskit-community/qiskit-textbook.git#subdirectory=qiskit-textbook-src
+https://quantumcomputing.stackexchange.com/questions/14096/using-the-qiskit-textbook-package
